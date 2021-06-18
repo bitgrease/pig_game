@@ -54,7 +54,7 @@ btnHold.addEventListener('click', function() {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
     // 2. Check if player's score is >=100
-    if(scores[activePlayer] >= 20) {
+    if(scores[activePlayer] >= 100) {
         // Winner!
         document
         .querySelector(`.player--${activePlayer}`).classList.add('player--winner');
@@ -62,6 +62,7 @@ btnHold.addEventListener('click', function() {
         .querySelector(`.player--${activePlayer}`).classList.remove('.player--active');
     } else {
         switchPlayer();
+        
     }
     // TODO: Ideas about changes when game is won:
     // Change winning player name to Winner

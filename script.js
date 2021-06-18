@@ -54,8 +54,19 @@ btnHold.addEventListener('click', function() {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
     // 2. Check if player's score is >=100
-    // Finish game
-
+    if(scores[activePlayer] >= 20) {
+        // Winner!
+        document
+        .querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document
+        .querySelector(`.player--${activePlayer}`).classList.remove('.player--active');
+    } else {
+        switchPlayer();
+    }
+    // TODO: Ideas about changes when game is won:
+    // Change winning player name to Winner
+    // Hide roll dice and hold Icons
     // Switch to other player
-    switchPlayer();
 });
+
+// TODO: New game button, reset all to initial values and unhide roll dice and hold buttons, make player 1 active.
